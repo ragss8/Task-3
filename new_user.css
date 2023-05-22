@@ -1,0 +1,71 @@
+body {
+    background-color: rgba(253, 253, 253, 0.884);
+    font-family: 'Tapestry', cursive;
+    display: flexbox;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    
+}
+p {
+    
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 2px;
+    word-spacing: 30px;
+}
+
+p a{
+    color: rgb(254, 254, 254);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+p a:hover{
+    color: rgb(252, 252, 250);
+    border-radius: 6px;
+    border: 3px solid white;
+    box-shadow: 0em 0.4em 0.3em 0em pink;
+}
+header{
+    height: 100px;
+    letter-spacing: 10px;
+    font-size: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+     
+}
+.neonText {
+    color: #fff;
+    font-size: larger;
+    text-shadow:
+        0 0 7px rgba(255, 255, 255, 0.699),
+        0 0 10px rgba(255, 255, 255, 0.651),
+        0 0 21px rgba(255, 255, 255, 0.626),
+        0 0 42px rgba(0, 255, 170, 0.76),
+        0 0 82px rgba(0, 255, 170, 0.694),
+        0 0 92px rgba(0, 255, 170, 0.6),
+        0 0 102px rgba(0, 255, 170, 0.616),
+        0 0 151px rgba(0, 255, 170, 0.669);
+  }
+.container{
+margin-left: auto;
+margin-right: auto;
+text-align:left;
+border: 3px solid rgb(13, 255, 0);
+border-radius: 8px;
+color: rgb(0, 40, 219);
+text-decoration: underline;
+}
+.container>form>input:hover{
+    border: 2px solid red;
+    width: 350px;
+}
+
+
+
+

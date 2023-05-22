@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dine-in</title>
+    <link rel="stylesheet" href="dine-in.css" href="">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image: url(./electric-neon-colorful-dark-background-lighting-2880x1800-2654.jpg); position: relative; display: block;">
+    <div >
+        <header class="neonText" style="font-size:80px ;">
+            - - -G.R.M.8 CUISINES - - - 
+        </header>
+    </div>
+     <p>
+        <a href="restaurant.html" style="text-decoration: none;"><b>HOME</b></a>
+        <a href="menu.html" style="text-decoration: none;"><b>MENU</b></a>
+        <a href="branches.html" style="text-decoration: none;"><b>BRANCHES</b></a>
+         </p>
+     <div class="container" style="height: 400px; width: 400px; margin-top: 50px; margin-bottom: 50px;">
+         <form id="login-form">
+             <h2 style="text-align: center; text-decoration: none;"><b>SIGN-IN</b></h2>
+             <label for="email" style="color: rgb(238, 231, 231);"><b>Enter Email-id:</b></label><br>
+             <input type="text" placeholder="email" style="width: 250px; background-color:rgb(246, 242, 242) ; height: 30px; border-radius: 4px; padding: 15px;" id="email"><br>
+             <label for="Password" style="color: rgb(253, 252, 252);"><b>Enter Password:</b></label><br>
+             <input type="text" placeholder="Password" style="width: 250px; background-color: rgb(246, 241, 241);  height: 30px; border-radius: 4px; padding: 15px;" id="Password"><br>
+             <!-- <a href="http://" target="_blank" rel="noopener noreferrer" >Resend OTP</a><br> -->
+             <h2></h2>
+             <button type="button" style="background-color: rgb(11, 183, 226); color: white; border: 2px solid white; border-radius: 5px;" onclick="loginUser()">Log in</button>
+             <h2></h2>
+             <h3 style="text-decoration: none;">Don't have an account?</h3>
+             <h2></h2>
+             <p><a href="new_user.html" style="font-size: 20px;">Create-new-user</a></p>>
+            </form>
+            <script>
+              function loginUser() {
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("Password").value;
+            
+                const xhr = new XMLHttpRequest();
+            
+                xhr.open("POST", "http://localhost:8000/login");
+                xhr.setRequestHeader("Content-Type", "application/json");
+            
+                xhr.onload = function () {
+                  if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    window.location.href = "user-login.html";
+                  } else {
+                    alert(`Error logging in: ${xhr.statusText}`);
+                  }
+                };
+                xhr.send(JSON.stringify({ email: email, password: password }));
+              }
+            </script>
+              
+     </div>
+    </body>
+</html>
+
+
+
+<!-- <script>
+  function loginUser() {
+    // Get the email and password inputs from the user
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("Password").value;
+
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Define the request parameters
+    xhr.open("POST", "http://localhost:8000/login");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    // Define the callback function to handle the response
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const data = JSON.parse(xhr.responseText);
+        //alert(`User logged in with ID ${data.id}`);
+        window.location.href = "user-login.html";
+      } else {
+        alert(`Error logging in: ${xhr.statusText}`);
+      }
+    };
+    xhr.send(JSON.stringify({ email: email, password: password }));
+  }
+</script> -->
